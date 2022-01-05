@@ -23,12 +23,18 @@ type Mutation {
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """mandatory user name"""
+  name: String!
+
+  """mandatory user email"""
+  email: String!
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  """mandatory user name"""
+  name: String
+
+  """mandatory user email"""
+  email: String
   id: Int!
 }

@@ -39,3 +39,11 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Altering Prisma models
+
+After making changes to prisma models run
+
+```bash
+$ npx prisma generate
+```

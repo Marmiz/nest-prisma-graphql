@@ -8,14 +8,13 @@ import { User } from './entities/user.entity';
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
-  create(createUserInput: CreateUserInput) {
-    console.log('creating user ', createUserInput);
-    return 'This action adds a new user';
+  async create(createUserInput: CreateUserInput): Promise<User> {
+    const u = await this.prisma.user.create({ data: createUserInput });
+    return u;
   }
 
   async findAll(): Promise<User[]> {
     const users = await this.prisma.user.findMany();
-    console.log('queried users.. ', users);
     return users;
   }
 
